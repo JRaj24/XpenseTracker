@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="@string/back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/amountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/monthSpinner"
+            android:layout_marginTop="40dp"
+            android:text="Amount: "
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/monthTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Month: "
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/amountEditText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/monthSpinner"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp" />
+
+        <Spinner
+            android:id="@+id/monthSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:entries="@array/months" />
+
+        <Spinner
+            android:id="@+id/yearSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="40dp"
+            android:entries="@array/years" />
+
+        <Button
+            android:id="@+id/pushButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/amountTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="Add Budget" />
+
+        <Button
+            android:id="@+id/showBudget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pushButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="Show Budgets" />
+
+        <Button
+            android:id="@+id/deleteBudget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/showBudget"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="Delete Budgets" />
+
+        <TableLayout
+            android:id="@+id/budgetTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="450dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Table Header Row -->
+            <TableRow
+                android:id="@+id/tr1"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="@color/teal_200">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/teal_200"
+                    android:padding="10dp"
+                    android:text="Budget Month"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/teal_200"
+                    android:padding="10dp"
+                    android:text="Budget Year"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/teal_200"
+                    android:padding="10dp"
+                    android:text="Budget Amount"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
